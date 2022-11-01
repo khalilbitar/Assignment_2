@@ -18,7 +18,15 @@ int& Stack::top() {
 void Stack::pop() {
     s.pop_back();
 }
-
+/*
+testing strategy:
+printing top on an empty stack
+popping an empty stack
+pushing to an empty stack
+pushing to, popping and printing top of a non empty stack
+pushing then printing top
+popping then printing top
+*/
 int main() {
     Stack s;
     s.push(1);
