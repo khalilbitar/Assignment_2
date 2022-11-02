@@ -34,6 +34,17 @@ vector<int> Graph::adjacent(const int nodeID) const {
     }
     return adj;
 }
+
+vector<int> Graph::checkCycle() {
+    vector<int> cycle;
+    for(int i = 0; i < starts.size(); i++) {
+        if(starts[i].data == ends[i].data) {
+            cycle.push_back(starts[i].data);
+            cycle.push_back(starts[i].data);
+            return cycle;
+        }
+    }
+}
 /*
 testing strategy:
 constructing a graph from empty vectors, vectors of differrent lengths, and vectors of same elements
@@ -66,6 +77,10 @@ int main() {
     vector<int> adj = g.adjacent(0);
     for(int i = 0; i < adj.size(); i++)
         cout<<adj[i]<<' ';
+    cout<<endl;
+    vector<int> cycles = g.checkCycle();
+    for(int i = 0; i < cycles.size(); i++)
+        cout<<cycles[i]<<' ';
     cout<<endl;
     return 0;
 }
