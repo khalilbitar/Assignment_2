@@ -12,6 +12,9 @@ class Graph{
         //effects: returns the number of out going edges from the given node
         int numOutgoing(const int nodeID);
         //requires: a node ID present in the graph
-        //effects: returns a vector of adjacent nodes for the given node;
+        //effects: returns a vector of adjacent nodes for the given node
         vector<int> adjacent(const int nodeID) const;
+        //requires: nothing
+        //effects: returns a cycle(vector) of 2 nodes if it exists
+        vector<int> checkCycle();
 };
